@@ -9,4 +9,8 @@ resource "aws_route53_record" "strapi" {
     zone_id                = aws_lb.main.zone_id
     evaluate_target_health = false
   }
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
